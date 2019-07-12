@@ -39,4 +39,5 @@ python 后台连接postgis 返回矢量切片
    ```
    
 # 结果 
-![image]('https://github.com/JerckyLY/postgis-stMvt/blob/master/image/2019-07-04_11-32-00.gif')
+![image](https://github.com/JerckyLY/postgis-stMvt/blob/master/image/postgis01.png)   
+![image](https://github.com/JerckyLY/postgis-stMvt/blob/master/image/2019-07-04_11-32-00.gif)
