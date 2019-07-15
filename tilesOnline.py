@@ -23,12 +23,12 @@ Dbpool = psycopg2.pool.SimpleConnectionPool(
 
 
 
-def tile_ul(x, y, z):
-    n = 2.0**z
-    lon_deg = x / n * 360.0 - 180.0
-    lat_rad = math.atan(math.sinh(math.pi * (1 - 2 * y / n)))
-    lat_deg = math.degrees(lat_rad)
-    return lon_deg, lat_deg
+#def tile_ul(x, y, z):
+    #n = 2.0**z
+    #lon_deg = x / n * 360.0 - 180.0
+    #lat_rad = math.atan(math.sinh(math.pi * (1 - 2 * y / n)))
+    #lat_deg = math.degrees(lat_rad)
+    #return lon_deg, lat_deg
 
 
 def get_tile(z, x, y):
