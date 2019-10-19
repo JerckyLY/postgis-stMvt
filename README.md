@@ -14,8 +14,8 @@ python 后台连接postgis 返回矢量切片
    ```
   - 重要的查询语句
    ```
-      // fills 为source-layer名称
-      query = "SELECT  ST_AsMVT( tile , 'fills' , 4096 , 'geom' ) tiles FROM ( SELECT  ST_AsMVTGeom( w.geom , ST_Transform(       ST_MakeEnvelope ( %s,%s,%s,%s,4326),3857),4096,256,true) AS geom FROM (SELECT  geom FROM public.china_point  ) w ) AS tile ;"
+      // 传 source-layer 和 tableName参数动态获取
+      query = "SELECT  ST_AsMVT( tile , '" + sourceLayer + "' , 4096 , 'geoms' ) tiles FROM ( SELECT   ST_AsMVTGeom( w.geoms , ST_Transform( ST_MakeEnvelope ( %s,%s,%s,%s,4326),3857),4096,256,true) AS geoms ,w.* FROM (SELECT  ST_Transform(geom,3857) geoms , * FROM public." + tableName + "  ) w ) AS tile ;"
      
    ```
   - mapbox前端加载代码
